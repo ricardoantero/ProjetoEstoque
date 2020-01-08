@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProdutosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PRO_PRO_PRODUTO">
+    <Key>
+      <PropertyRef Name="PRO_N_CODIGO" />
+    </Key>
+    <Property Name="PRO_N_CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PRO_N_REFERENCIA" Type="varchar(max)" />
+    <Property Name="PRO_C_NOME" Type="varchar(max)" />
+    <Property Name="PRO_C_DESCRICAO" Type="varchar(max)" />
+    <Property Name="PRO_C_MARCA" Type="varchar(max)" />
+    <Property Name="PRO_C_COR" Type="varchar(max)" />
+    <Property Name="PRO_C_VALOR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PRO_C_VALOR_VENDA" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PRO_C_PORCENTAGEM" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PRO_D_DATA_CADASTRO" Type="datetime" />
+    <Property Name="PRO_D_DATA_VENDA" Type="datetime" />
+    <Property Name="PRO_C_TAMANHO" Type="varchar(max)" />
+    <Property Name="PRO_N_SITUACAO" Type="int" />
+    <Property Name="PRO_C_IMAGEM" Type="varchar(max)" />
+    <Property Name="PRO_B_ATIVO" Type="bit" />
+  </EntityType>
+  <EntityType Name="PRO_USU_USUARIO">
+    <Key>
+      <PropertyRef Name="USU_N_CODIGO" />
+    </Key>
+    <Property Name="USU_N_CODIGO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USU_C_NOME" Type="varchar(max)" />
+    <Property Name="USU_C_SENHA" Type="varchar(max)" />
+    <Property Name="USU_C_ATIVO" Type="bit" />
+  </EntityType>
+  <Function Name="PRO_I_IMAGEM" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PRO_C_IMAGEM" Type="varchar(max)" Mode="In" />
+    <Parameter Name="PRO_N_CODIGO" Type="int" Mode="In" />
+  </Function>
+  <Function Name="PRO_L_SACOLA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="PRO_N_REFERENCIA" Type="varchar(max)" Mode="In" />
+  </Function>
+  <EntityContainer Name="ProdutosModelStoreContainer">
+    <EntitySet Name="PRO_PRO_PRODUTO" EntityType="Self.PRO_PRO_PRODUTO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRO_USU_USUARIO" EntityType="Self.PRO_USU_USUARIO" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

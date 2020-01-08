@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Business.PRO_USU_USUARIO>
+
+@{
+    ViewBag.Title = "USUÁRIOS";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string Ativo;
+}
+<p>
+    @Html.ActionLink("Novo Usuário", "Create")
+</p>
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fa fa-table"></i> Listagem de Usuários
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.Raw("Login")
+                        </th>
+                        <th>
+                            @Html.Raw("Ativo")
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.USU_C_NOME)
+                            </td>
+                            <td>
+                                @if(item.USU_C_ATIVO == true)
+                                {
+                                    Ativo = "Sim";
+                                }
+                                else
+                                {
+                                    Ativo = "Não";
+                                }
+                                @Html.Raw(Ativo)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.USU_N_CODIGO }) |
+                                @Html.ActionLink("Detalhe", "Details", new { id = item.USU_N_CODIGO }) |
+                                @Html.ActionLink("Deletar", "Delete", new { id = item.USU_N_CODIGO })
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

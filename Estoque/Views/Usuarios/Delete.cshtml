@@ -1,0 +1,61 @@
+﻿@model Business.PRO_USU_USUARIO
+
+@{
+    ViewBag.Title = "Excluir Usuário";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<body class="bg-dark">
+    <div class="container">
+        <div class="card card-register mx-auto mt-5">
+            <div class="card-header">Deseja realmente excluir esse usuário?</div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <dl class="dl-horizontal">
+                                    <dt>
+                                        @Html.Raw("Nome")
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.USU_C_NOME)
+                                    </dd>
+
+                                    <dt>
+                                        @Html.Raw("Senha")
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.USU_C_SENHA)
+                                    </dd>
+
+                                    <dt>
+                                        @Html.Raw("Ativo")
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DropDownListFor(modelItem => modelItem.USU_C_ATIVO, new[] { new SelectListItem { Text = "Sim", Value = "true" }, new SelectListItem { Text = "Não", Value = "false" } }, new { @class = "form-control", @readonly = "readonly" })
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Deletar" class="btn btn-danger btn-block" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<p>
+    @Html.ActionLink("Voltar", "Index")
+</p>
+}
+
+
+

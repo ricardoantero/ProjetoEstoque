@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProdutosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PRO_PRO_PRODUTO">
+    <Key>
+      <PropertyRef Name="PRO_N_CODIGO" />
+    </Key>
+    <Property Name="PRO_N_CODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRO_N_REFERENCIA" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="PRO_C_NOME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_C_DESCRICAO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_C_MARCA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_C_COR" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_C_VALOR" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PRO_C_VALOR_VENDA" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PRO_C_PORCENTAGEM" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PRO_D_DATA_CADASTRO" Type="DateTime" Precision="3" />
+    <Property Name="PRO_D_DATA_VENDA" Type="DateTime" Precision="3" />
+    <Property Name="PRO_C_TAMANHO" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_N_SITUACAO" Type="Int32" />
+    <Property Name="PRO_C_IMAGEM" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="PRO_B_ATIVO" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="PRO_USU_USUARIO">
+    <Key>
+      <PropertyRef Name="USU_N_CODIGO" />
+    </Key>
+    <Property Name="USU_N_CODIGO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USU_C_NOME" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="USU_C_SENHA" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="USU_C_ATIVO" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="Produtos" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PRO_PRO_PRODUTO" EntityType="Self.PRO_PRO_PRODUTO" />
+    <EntitySet Name="PRO_USU_USUARIO" EntityType="Self.PRO_USU_USUARIO" />
+    <FunctionImport Name="PRO_I_IMAGEM">
+      <Parameter Name="PRO_C_IMAGEM" Mode="In" Type="String" />
+      <Parameter Name="PRO_N_CODIGO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="PRO_L_SACOLA" ReturnType="Collection(ProdutosModel.PRO_L_SACOLA_Result)">
+      <Parameter Name="PRO_N_REFERENCIA" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="PRO_L_SACOLA_Result">
+    <Property Type="Int32" Name="PRO_N_CODIGO" Nullable="false" />
+    <Property Type="String" Name="PRO_N_REFERENCIA" Nullable="true" />
+    <Property Type="String" Name="PRO_C_NOME" Nullable="true" />
+    <Property Type="String" Name="PRO_C_DESCRICAO" Nullable="true" />
+    <Property Type="String" Name="PRO_C_MARCA" Nullable="true" />
+    <Property Type="String" Name="PRO_C_COR" Nullable="true" />
+    <Property Type="Decimal" Name="PRO_C_VALOR" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="PRO_C_VALOR_VENDA" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="PRO_C_PORCENTAGEM" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="PRO_D_DATA_CADASTRO" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="PRO_D_DATA_VENDA" Nullable="true" Precision="23" />
+    <Property Type="String" Name="PRO_C_TAMANHO" Nullable="true" />
+    <Property Type="Int32" Name="PRO_N_SITUACAO" Nullable="true" />
+    <Property Type="String" Name="PRO_C_IMAGEM" Nullable="true" />
+    <Property Type="Boolean" Name="PRO_B_ATIVO" Nullable="true" />
+  </ComplexType>
+</Schema>

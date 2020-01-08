@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Controle de Produtos</title>
+    <link rel="shortcut icon" href="~/Imagens/favicon.jpg" type="image/x-icon">
+    <link href="/style/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/style/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/style/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link href="/style/css/sb-admin.css" rel="stylesheet">
+    <link href="/style/css/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Style/css/jquery-ui.min.css" rel="stylesheet" />
+
+    <link href="/style/css/main.css" rel="stylesheet" />
+</head>
+<body class="fixed-nav sticky-footer bg-dark sidenav-toggled" id="page-top">
+    <!-- Navigation-->
+
+    <nav class="back-color-top navbar navbar-expand-lg navbar-dark bg-info fixed-top" id="mainNav">
+        <a class="navbar-brand" style="font-family: cursive;" href="/login">Mamãe Escolhe</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="back-color navbar-nav navbar-sidenav" id="exampleAccordion">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Produto">
+                    <a class="nav-link" href="/produtos">
+                        <i class="fa fa-fw fa-table"></i>
+                        <span class="nav-link-text">Produto</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Usuário">
+                    <a class="nav-link" href="/usuarios">
+                        <i class="fa fa-fw fa-link"></i>
+                        <span class="nav-link-text">Usuário</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav sidenav-toggler">
+                <li class="nav-item">
+                    <a class="nav-link text-center" id="sidenavToggler">
+                        <i class="fa fa-fw fa-angle-left"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link">
+                        <i class="fa fa-fw fa-user"></i>@this.Session["login"]
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                        <i class="fa fa-fw fa-sign-out"></i>Deslogar
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content-wrapper">
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active">@ViewBag.Title</li>
+            </ol>
+            @RenderBody()
+        </div>
+        <footer class="sticky-footer">
+            <div class="container">
+                <div class="text-center">
+                    <small>Controle de Produtos | @DateTime.Now.Year.ToString()</small>
+                </div>
+            </div>
+        </footer>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fa fa-angle-up"></i>
+        </a>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Deseja Deslogar da Sessão?</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
+
+                        <a class="btn btn-primary" href="/login/sair">Deslogar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="/style/vendor/jquery/jquery.min.js"></script>
+        <script src="/style/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/style/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="/style/vendor/chart.js/Chart.min.js"></script>
+        <script src="/style/vendor/datatables/jquery.dataTables.js"></script>
+        <script src="/style/vendor/datatables/dataTables.bootstrap4.js"></script>
+        <script src="~/Scripts/jquery-ui.js"></script>
+        <script src="~/Scripts/js/sb-admin-charts.min.js"></script>
+        <script src="~/Scripts/js/sb-admin-datatables.min.js"></script>
+        <script src="~/Scripts/js/sb-admin.min.js"></script>
+        <script src="~/Scripts/jquery.moneymask.js"></script>
+        <script src="~/Scripts/jquery.maskedinput.js"></script>
+        <script src="~/Scripts/jquery.maskedinput.min.js"></script>
+
+    </div>
+</body>
+</html>

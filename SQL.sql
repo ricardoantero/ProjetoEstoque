@@ -1,0 +1,1 @@
+﻿select * from PRO_PRO_PRODUTO

@@ -1,0 +1,183 @@
+﻿@model Business.PRO_PRO_PRODUTO
+
+@{
+    ViewBag.Title = "Produto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Create", "Produtos", FormMethod.Post,
+                            new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <body class="bg-dark">
+        <div class="container">
+            <div class="card card-register mx-auto mt-5">
+                <div class="card-header">Registrar Produto</div>
+                <div class="card-body">
+                    <form id="FrmCreate" action="Produtos/Create">
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-5">
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.Raw("Referência")
+                                        @Html.EditorFor(model => model.PRO_N_REFERENCIA, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PRO_N_REFERENCIA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        @Html.Raw("Nome")
+                                        @Html.EditorFor(model => model.PRO_C_NOME, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PRO_C_NOME, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        @Html.Raw("Descrição")
+                                        @Html.EditorFor(model => model.PRO_C_DESCRICAO, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PRO_C_DESCRICAO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.Raw("Marca")
+                                        @Html.EditorFor(model => model.PRO_C_MARCA, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PRO_C_MARCA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        @Html.Raw("Cor")
+                                        @Html.EditorFor(model => model.PRO_C_COR, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PRO_C_COR, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        @Html.Raw("Quantidade")
+                                        @Html.EditorFor(model => model.PRO_C_PORCENTAGEM, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PRO_C_PORCENTAGEM, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="form-group">
+                                        @Html.Raw("Tamanho")
+                                        @Html.EditorFor(model => model.PRO_C_TAMANHO, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PRO_C_TAMANHO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.Raw("Situação(Estoque/Vendida)")
+                                        <div class="checkbox">
+                                            @Html.DropDownListFor(modelItem => modelItem.PRO_N_SITUACAO, new[] { new SelectListItem { Text = "Estoque", Value = "1" }, new SelectListItem { Text = "Vendido", Value = "2" } }, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.PRO_N_SITUACAO, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        @Html.Raw("Valor Custo")
+                                        @Html.EditorFor(model => model.PRO_C_VALOR, new { htmlAttributes = new {@ID = "valor", @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PRO_C_VALOR, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        @Html.Raw("Valor de Venda")
+                                        @Html.EditorFor(model => model.PRO_C_VALOR_VENDA, new { htmlAttributes = new { @ID = "valorvenda", @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PRO_C_VALOR_VENDA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        @Html.Raw("Data Cadastro")
+                                        @Html.EditorFor(model => model.PRO_D_DATA_CADASTRO, new { htmlAttributes = new { @ID = "datacadastro", @class = "form-control JSData", @Value = DateTime.Now.ToString("dd/MM/yyyy") } })
+                                        @Html.ValidationMessageFor(model => model.PRO_D_DATA_CADASTRO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        @Html.Raw("Data Venda")
+                                        @Html.EditorFor(model => model.PRO_D_DATA_VENDA, new { htmlAttributes = new { @ID = "datavenda", @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PRO_D_DATA_VENDA, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        @Html.Raw("Imagem")
+                                        @Html.EditorFor(model => model.PRO_C_IMAGEM, new { htmlAttributes = new { @class = "form-control makethispretty", @ID = "txtUploadFile", @NAME = "Image", Type = "file", @Multiple = "multiple" } })
+                                        @Html.ValidationMessageFor(model => model.PRO_C_IMAGEM, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        @Html.Raw("Ativo")
+                                        <div class="checkbox">
+                                            @Html.DropDownListFor(modelItem => modelItem.PRO_B_ATIVO, new[] { new SelectListItem { Text = "Sim", Value = "true" }, new SelectListItem { Text = "Não", Value = "false" } }, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.PRO_B_ATIVO, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="submit" value="Salvar" id="Create" name="Create" class="btn btn-primary btn-block"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script>
+        $(document).ready(function ()
+        {
+            $("#valor").maskMoney({ showSymbol: true, symbol: "R$", decimal: ",", thousands: "" });
+            $("#valorvenda").maskMoney({ showSymbol: true, symbol: "R$", decimal: ",", thousands: "" });
+            $("#datacadastro").mask("99/99/9999");
+            $("#datavenda").mask("99/99/9999");
+        });
+</script>
+

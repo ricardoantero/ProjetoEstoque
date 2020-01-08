@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProdutosModelStoreContainer" CdmEntityContainer="Produtos">
+    <EntitySetMapping Name="PRO_PRO_PRODUTO">
+      <EntityTypeMapping TypeName="ProdutosModel.PRO_PRO_PRODUTO">
+        <MappingFragment StoreEntitySet="PRO_PRO_PRODUTO">
+          <ScalarProperty Name="PRO_N_CODIGO" ColumnName="PRO_N_CODIGO" />
+          <ScalarProperty Name="PRO_N_REFERENCIA" ColumnName="PRO_N_REFERENCIA" />
+          <ScalarProperty Name="PRO_C_NOME" ColumnName="PRO_C_NOME" />
+          <ScalarProperty Name="PRO_C_DESCRICAO" ColumnName="PRO_C_DESCRICAO" />
+          <ScalarProperty Name="PRO_C_MARCA" ColumnName="PRO_C_MARCA" />
+          <ScalarProperty Name="PRO_C_COR" ColumnName="PRO_C_COR" />
+          <ScalarProperty Name="PRO_C_VALOR" ColumnName="PRO_C_VALOR" />
+          <ScalarProperty Name="PRO_C_VALOR_VENDA" ColumnName="PRO_C_VALOR_VENDA" />
+          <ScalarProperty Name="PRO_C_PORCENTAGEM" ColumnName="PRO_C_PORCENTAGEM" />
+          <ScalarProperty Name="PRO_D_DATA_CADASTRO" ColumnName="PRO_D_DATA_CADASTRO" />
+          <ScalarProperty Name="PRO_D_DATA_VENDA" ColumnName="PRO_D_DATA_VENDA" />
+          <ScalarProperty Name="PRO_C_TAMANHO" ColumnName="PRO_C_TAMANHO" />
+          <ScalarProperty Name="PRO_N_SITUACAO" ColumnName="PRO_N_SITUACAO" />
+          <ScalarProperty Name="PRO_C_IMAGEM" ColumnName="PRO_C_IMAGEM" />
+          <ScalarProperty Name="PRO_B_ATIVO" ColumnName="PRO_B_ATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRO_USU_USUARIO">
+      <EntityTypeMapping TypeName="ProdutosModel.PRO_USU_USUARIO">
+        <MappingFragment StoreEntitySet="PRO_USU_USUARIO">
+          <ScalarProperty Name="USU_N_CODIGO" ColumnName="USU_N_CODIGO" />
+          <ScalarProperty Name="USU_C_NOME" ColumnName="USU_C_NOME" />
+          <ScalarProperty Name="USU_C_SENHA" ColumnName="USU_C_SENHA" />
+          <ScalarProperty Name="USU_C_ATIVO" ColumnName="USU_C_ATIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="PRO_I_IMAGEM" FunctionName="ProdutosModel.Store.PRO_I_IMAGEM" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<Business.Produtos>
+@{
+    ViewBag.Title = "Sacola de Produtos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card mb-3">
+    <div class="card-header">
+        <button class="btn btn-primary hidden-print" onclick="myFunction()"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Imprimir</button>
+    </div>
+    <div class="card-body">
+
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTables" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.Raw("Cod Refêrencia")
+                        </th>
+                        <th>
+                            @Html.Raw("Nome")
+                        </th>
+                        <th>
+                            @Html.Raw("Descrição")
+                        </th>
+                        <th>
+                            @Html.Raw("Tamanho")
+                        </th>
+                        <th>
+                            @Html.Raw("Valor")
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var list in ViewBag.Retorno)
+                {
+                    foreach (var item in list)
+                    {
+                        <tr> 
+                            <td>
+                                @Html.Raw(item.PRO_N_REFERENCIA) 
+                            </td>
+                            <td>
+                                @Html.Raw(item.PRO_C_NOME)
+                            </td>
+                            <td>
+                                @Html.Raw(item.PRO_C_DESCRICAO)
+                            </td>
+                            <td>
+                                @Html.Raw(item.PRO_C_TAMANHO)
+                            </td>
+                            <td>
+                                @Html.Raw(item.PRO_C_VALOR_VENDA)
+                            </td>
+                        </tr>
+                    }
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script>
+    function myFunction() {
+        window.print();
+    }
+ </script>
+
+

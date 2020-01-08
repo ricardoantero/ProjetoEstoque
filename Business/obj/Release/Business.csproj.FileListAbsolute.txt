@@ -1,0 +1,12 @@
+C:\Users\ricar\OneDrive\documentos\visual studio 2017\Projects\Estoque\Business\bin\Release\Business.dll.config
+C:\Users\ricar\OneDrive\documentos\visual studio 2017\Projects\Estoque\Business\bin\Release\Business.dll
+C:\Users\ricar\OneDrive\documentos\visual studio 2017\Projects\Estoque\Business\bin\Release\Business.pdb
+C:\Users\ricar\OneDrive\documentos\visual studio 2017\Projects\Estoque\Business\bin\Release\EntityFramework.dll
+C:\Users\ricar\OneDrive\documentos\visual studio 2017\Projects\Estoque\Business\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\ricar\OneDrive\documentos\visual studio 2017\Projects\Estoque\Business\bin\Release\Microsoft.Web.Infrastructure.dll
+C:\Users\ricar\OneDrive\documentos\visual studio 2017\Projects\Estoque\Business\bin\Release\WebActivatorEx.dll
+C:\Users\ricar\OneDrive\documentos\visual studio 2017\Projects\Estoque\Business\bin\Release\EntityFramework.xml
+C:\Users\ricar\OneDrive\documentos\visual studio 2017\Projects\Estoque\Business\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\ricar\OneDrive\documentos\visual studio 2017\Projects\Estoque\Business\obj\Release\Business.csprojResolveAssemblyReference.cache
+C:\Users\ricar\OneDrive\documentos\visual studio 2017\Projects\Estoque\Business\obj\Release\Business.dll
+C:\Users\ricar\OneDrive\documentos\visual studio 2017\Projects\Estoque\Business\obj\Release\Business.pdb

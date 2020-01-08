@@ -1,0 +1,12 @@
+C:\Users\ricar\OneDrive\Documentos\Visual Studio 2017\Projects\Estoque\Business\bin\Debug\Business.dll.config
+C:\Users\ricar\OneDrive\Documentos\Visual Studio 2017\Projects\Estoque\Business\bin\Debug\Business.dll
+C:\Users\ricar\OneDrive\Documentos\Visual Studio 2017\Projects\Estoque\Business\bin\Debug\Business.pdb
+C:\Users\ricar\OneDrive\Documentos\Visual Studio 2017\Projects\Estoque\Business\bin\Debug\EntityFramework.dll
+C:\Users\ricar\OneDrive\Documentos\Visual Studio 2017\Projects\Estoque\Business\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ricar\OneDrive\Documentos\Visual Studio 2017\Projects\Estoque\Business\bin\Debug\EntityFramework.xml
+C:\Users\ricar\OneDrive\Documentos\Visual Studio 2017\Projects\Estoque\Business\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ricar\OneDrive\Documentos\Visual Studio 2017\Projects\Estoque\Business\obj\Debug\Business.dll
+C:\Users\ricar\OneDrive\Documentos\Visual Studio 2017\Projects\Estoque\Business\obj\Debug\Business.pdb
+C:\Users\ricar\OneDrive\documentos\visual studio 2017\Projects\Estoque\Business\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\ricar\OneDrive\documentos\visual studio 2017\Projects\Estoque\Business\bin\Debug\WebActivatorEx.dll
+C:\Users\ricar\OneDrive\documentos\visual studio 2017\Projects\Estoque\Business\obj\Debug\Business.csprojResolveAssemblyReference.cache

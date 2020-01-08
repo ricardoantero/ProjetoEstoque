@@ -1,0 +1,169 @@
+﻿@model Business.PRO_PRO_PRODUTO
+
+@{
+    ViewBag.Title = "Detalhe Produto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body class="bg-dark">
+    <div class="container">
+        <div class="card card-register mx-auto mt-5">
+            <div class="card-header">Detalhe</div>
+            <div class="card-body">
+                <form>
+                    @if (Model.PRO_C_IMAGEM != null)
+                    {
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-md-10">
+                                    <div class="form-group">
+                                        <img src="@Html.DisplayFor(model => model.PRO_C_IMAGEM)" height="150px" width="150px" /><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-5">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.Raw("Referência")
+                                    @Html.EditorFor(model => model.PRO_N_REFERENCIA, new { htmlAttributes = new { @class = "form-control", @readonly="readonly" } })
+                                    @Html.ValidationMessageFor(model => model.PRO_N_REFERENCIA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    @Html.Raw("Nome")
+                                    @Html.EditorFor(model => model.PRO_C_NOME, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.PRO_C_NOME, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-10">
+                                <div class="form-group">
+                                    @Html.Raw("Descrição")
+                                    @Html.EditorFor(model => model.PRO_C_DESCRICAO, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.PRO_C_DESCRICAO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.Raw("Marca")
+                                    @Html.EditorFor(model => model.PRO_C_MARCA, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.PRO_C_MARCA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    @Html.Raw("Cor")
+                                    @Html.EditorFor(model => model.PRO_C_COR, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.PRO_C_COR, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    @Html.Raw("Quantidade")
+                                    @Html.EditorFor(model => model.PRO_C_PORCENTAGEM, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.PRO_C_PORCENTAGEM, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    @Html.Raw("Tamanho")
+                                    @Html.EditorFor(model => model.PRO_C_TAMANHO, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.PRO_C_TAMANHO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.Raw("Situação(Estoque/Vendida)")
+                                    <div class="checkbox">
+                                        @Html.DropDownListFor(modelItem => modelItem.PRO_N_SITUACAO, new[] { new SelectListItem { Text = "Estoque", Value = "1" }, new SelectListItem { Text = "Vendido", Value = "2" } }, new { @class = "form-control", @readonly = "readonly" })
+                                        @Html.ValidationMessageFor(model => model.PRO_N_SITUACAO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    @Html.Raw("Valor de Custo")
+                                    @Html.EditorFor(model => model.PRO_C_VALOR, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.PRO_C_VALOR, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    @Html.Raw("Valor de Venda")
+                                    @Html.EditorFor(model => model.PRO_C_VALOR_VENDA, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.PRO_C_VALOR_VENDA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    @Html.Raw("Lucro")
+                                    <input name="name" class="form-control" value="@Html.Raw(Model.PRO_C_VALOR_VENDA - Model.PRO_C_VALOR)" readonly="readonly"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    @Html.Raw("Data Cadastro")
+                                    @Html.EditorFor(model => model.PRO_D_DATA_CADASTRO, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.PRO_D_DATA_CADASTRO, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    @Html.Raw("Data Venda")
+                                    @Html.EditorFor(model => model.PRO_D_DATA_VENDA, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.PRO_D_DATA_VENDA, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    @Html.Raw("Ativo")
+                                    <div class="checkbox">
+                                        @Html.DropDownListFor(modelItem => modelItem.PRO_B_ATIVO, new[] { new SelectListItem { Text = "Sim", Value = "true" }, new SelectListItem { Text = "Não", Value = "false" } }, new { @class = "form-control", @readonly = "readonly" })
+                                        @Html.ValidationMessageFor(model => model.PRO_B_ATIVO, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.PRO_N_CODIGO }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

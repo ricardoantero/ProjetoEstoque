@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Business.PRO_PRO_PRODUTO>
+
+@{
+    ViewBag.Title = "Produtos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    string Situacao;
+}
+
+<p>
+    @Html.ActionLink("Novo Produto", "Create")
+</p>
+<div class="card mb-3">
+    <div class="card-header">
+        <i class="fa fa-table"></i> Listagem de Produtos
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>
+                            @Html.Raw("Ref")
+                        </th>
+                        <th>
+                            @Html.Raw("Nome")
+                        </th>
+                        <th>
+                            @Html.Raw("Descrição")
+                        </th>
+                        <th>
+                            @Html.Raw("Marca")
+                        </th>
+                        <th>
+                            @Html.Raw("Cor")
+                        </th>
+                        <th>
+                            @Html.Raw("Tamanho")
+                        </th>
+                        <th>
+                            @Html.Raw("Qtd")
+                        </th>
+                        <th>
+                            @Html.Raw("Valor Venda")
+                        </th>
+                        <th>
+                            @Html.Raw("Situação")
+                        </th>
+                       <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <img src="@Html.DisplayFor(modelItem => item.PRO_C_IMAGEM)" height="50px" width="50px" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PRO_N_REFERENCIA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PRO_C_NOME)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PRO_C_DESCRICAO)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PRO_C_MARCA)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PRO_C_COR)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PRO_C_TAMANHO)
+                            </td>
+                            <td>
+                                @Html.Raw(Convert.ToInt16(item.PRO_C_PORCENTAGEM))
+                            </td>
+                            <td>
+                                @Html.Raw(string.Format("{0:C}", item.PRO_C_VALOR_VENDA))
+                            </td>
+                            <td>
+                                @if (item.PRO_N_SITUACAO == 1)
+                                {
+                                    Situacao = "Estoque";
+                                }
+                                else
+                                {
+                                    Situacao = "Vendido";
+                                }
+                                @Html.Raw(Situacao)
+                            </td>
+                           
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.PRO_N_CODIGO }) 
+                                @Html.ActionLink("Detalhe", "Details", new { id = item.PRO_N_CODIGO }) 
+                                @Html.ActionLink("Deletar", "Delete", new { id = item.PRO_N_CODIGO })
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
